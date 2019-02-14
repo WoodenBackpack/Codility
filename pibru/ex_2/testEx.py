@@ -3,15 +3,11 @@ import unittest
 
 class ExTest(unittest.TestCase):
     def setUp(self):
-        self.calc = Calc()
+    	
 
-    def testShouldReturnNumberForOne(self):
+    def testGetListOfNonEmptyLinesGetsEmptyFile(self):
         
         self.assertEquals(2, self.calc.run([2]))
-    
-    def testShouldReturnOddWithoutPair(self):
-        
-        self.assertEquals(1, self.calc.run([2,2,1]))
 
 
 
