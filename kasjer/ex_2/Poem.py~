@@ -49,9 +49,9 @@ class Poem():
     # returns whole content + author + title
   def __str__(self):
     # __str__ returns a string to print function
-    # without it print(Poem("Ujejski", "Choral", "???") will return a object instead of string
+    # without it print(Poem("Ujejski", "Chorał", "???") will return a object instead of string
     # <class '__main__.Poem'> ...
-    # ie Krzysztof Kamil Baczynski Biala Magia
+    # ie Krzysztof Kamil Baczynski Biała Magia
     return self.author + " " + self.title
 
 
@@ -64,7 +64,7 @@ if __name__ == '__main__':
     rawContent = "\n".join(poem.rawContentList())
     poems.write(rawContent)
     with open(poem.title.replace(" ","") + "_" + poem.author.replace(" ", "") + ".txt", "w") as outputFile:
-      # Opens file with name ie: "KrzysztofKamilBaczynski_Bialamagia.txt"
+      # Opens file with name ie: "KrzysztofKamilBaczyński_Białamagia.txt"
       outputFile.write(rawContent)
       # Writes rawContent to file
     poems.write(space)
