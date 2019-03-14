@@ -36,11 +36,41 @@ def algorytm2(grapf, types, start):
         element = grafQueue.get()
     print(visited)
 
+def algorytm3(grapf, colors, start):
+    grafQueue = queue.Queue()
+    numberOfVertices = len(grapf)
+    visited = [None] * numberOfVertices
 
-types = ["a", "b", "c", "d", "e", "f", "g", "h"]
+    element = start
+    grafQueue.put(element)
+
+    while not grafQueue.empty():
+        if visited[element] == None:
+            neighboursColors = []
+            for x in grapf[element]:
+                neighboursColors.append(visited[x])
+                grafQueue.put(x)
+            for color in colors:
+                if color not in neighboursColors:
+                    visited[element] = color
+                    break
+        element = grafQueue.get()
+    print(visited)
+
+def createColoredTable(n):
+    #colors = []
+    colors = list()    
+    index = ord("a")
+    for it in range(index, index + n):
+        colors.append(chr(it)) 
+    return colors   
+
+
 grafDict = {0: [1, 3, 4], 1: [0, 2, 5, 3], 2: [1, 3, 4, 5], 3: [0, 1, 2, 7, 6], 4: [0, 2, 8, 6], 5: [1, 2, 8, 7, 6], 6: [3, 4, 5, 7], 7: [6, 3, 5, 8], 8: [5, 4, 7]}
-algorytm(grafDict, types, 0)
+colors = createColoredTable(len(grafDict))
+print(colors)
+#algorytm(grafDict, colors, 0)
 print(" ")
 print(" ")
 print(" ")
-algorytm2(grafDict, types, 0)
+algorytm3(grafDict, colors, 0)
