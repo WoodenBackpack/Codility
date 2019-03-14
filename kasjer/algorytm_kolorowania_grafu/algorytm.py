@@ -57,20 +57,30 @@ def algorytm3(grapf, colors, start):
         element = grafQueue.get()
     print(visited)
 
-def createColoredTable(n):
+def createCharTable(n):
     #colors = []
     colors = list()    
     index = ord("a")
     for it in range(index, index + n):
         colors.append(chr(it)) 
+    return colors
+
+def createColoredTable(n):
+    #colors = []
+    colors = list()
+    rgb = 0
+    tmp = 255//n
+    for it in range(n):       
+        colors.append([rgb,rgb,rgb])
+        rgb +=tmp 
     return colors   
 
-
-grafDict = {0: [1, 3, 4], 1: [0, 2, 5, 3], 2: [1, 3, 4, 5], 3: [0, 1, 2, 7, 6], 4: [0, 2, 8, 6], 5: [1, 2, 8, 7, 6], 6: [3, 4, 5, 7], 7: [6, 3, 5, 8], 8: [5, 4, 7]}
-colors = createColoredTable(len(grafDict))
-print(colors)
-#algorytm(grafDict, colors, 0)
-print(" ")
-print(" ")
-print(" ")
-algorytm3(grafDict, colors, 0)
+if __name__ == "__main__":
+    grafDict = {0: [1, 3, 4], 1: [0, 2, 5, 3], 2: [1, 3, 4, 5], 3: [0, 1, 2, 7, 6], 4: [0, 2, 8, 6], 5: [1, 2, 8, 7, 6], 6: [3, 4, 5, 7], 7: [6, 3, 5, 8], 8: [5, 4, 7]}
+    colors = createCharTable(len(grafDict))
+    print(colors)
+    #algorytm(grafDict, colors, 0)
+    print(" ")
+    print(" ")
+    print(" ")
+    algorytm3(grafDict, colors, 0)
