@@ -2,7 +2,6 @@ from PyQt5 import QtCore
 from PyQt5 import QtGui
 from PyQt5 import QtWidgets
 
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.resize(500, 500)
@@ -44,9 +43,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.painter.setPen(QtCore.Qt.black)
         self.painter.begin(self)
         self.createAndDrawLine(10, 100)
-        self.createAndDrawCircle(10, 20, 30, 40, "A", 255, 0 , 0)
+        self.createAndDrawCircle(10, 50, 30, 40, "A", 255, 0 , 0)
         self.painter.end()
-
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(["app"])

@@ -2,6 +2,7 @@ from PyQt4 import QtCore
 from PyQt4 import QtGui
 from PyQt4 import QtWidgets
 import algorytm
+from math import sqrt
 
 
 class Ui_MainWindow(object):
@@ -23,7 +24,15 @@ class MainWindow(QtWidgets.QMainWindow):
     
     def createAndDrawGraph(self):
         grafDict = {0: [1, 3, 4], 1: [0, 2, 5, 3], 2: [1, 3, 4, 5], 3: [0, 1, 2, 7, 6], 4: [0, 2, 8, 6], 5: [1, 2, 8, 7, 6], 6: [3, 4, 5, 7], 7: [6, 3, 5, 8], 8: [5, 4, 7]}
-        algorytm.createColoredTable(9)
+        numberOfVertices = len(grafDict)
+        coloredTable = algorytm.createColoredTable(numberOfVertices)
+	    verticesColors = algorytm.algorytm3(grafDict, coloredTable, 0)
+        createAndDrawCircle(self, xPos, yPos, x, y, text, colorR, colorG, colorB)
+        
+        temp = sqrt(numberOfVertices)
+        grid = int(tmp)
+        if(float(tmp) - int(tmp):
+            grid += 1
         
 
 
